@@ -1,0 +1,28 @@
+﻿@using CRUDelicious.Models
+@model Dish
+
+
+<h1 class="mb-5">Welcome to CRUDelicious!</h1>
+<div class="d-flex justify-content-between">
+    <h4>Check out some recent dishes!</h4>
+    <a href="addDish" class="btn btn-outline-info btn-lg">Add a Dish</a>
+</div>
+<div>
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Dish ID</th>
+            <th>Name</th>
+            <th>Chef</th>
+            <th>Actions</th>
+        </tr>
+        @foreach (Dish dish in ViewBag.AllDishes)
+        {
+            <tr>
+                <td>@dish.DishId</td>
+                <td><a href="/dishes/@dish.DishId">@dish.Name</a></td>
+                <td>@dish.Chef</td>
+                <td><a href="/dishes/@dish.DishId/delete" class="btn btn-outline-danger btn-sm">Throw dish away</a> | <a href="/dishes/@dish.DishId/edit" class="btn btn-outline-warning btn-sm">Fix Dish</a></td>
+            </tr>
+        }
+    </table>
+</div>

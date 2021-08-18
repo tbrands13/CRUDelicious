@@ -1,0 +1,26 @@
+@using CRUDelicious.Models
+@model Dish
+
+<div class="d-flex justify-content-start mb-4">
+<a href="/" class="btn btn-lg btn-outline-primary">Home</a>
+</div>
+<div>
+<h1>Edit Dish</h1>
+</div>
+<div class="mt-4">
+    <form asp-controller="Home" asp-action="SubmitEdit" method="POST" class="form-group">
+
+        <input type="hidden" asp-for="DishId">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control">
+        <label asp-for="Chef"></label>
+        <input asp-for="Chef" class="form-control">
+        <label asp-for="Tastiness"></label>
+        <input asp-for="Tastiness" class="form-control">
+        <label asp-for="Calories"></label>
+        <input asp-for="Calories" class="form-control">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control">
+        <input type="submit" value="Fix Dish" class="btn btn-lg btn-outline-warning mt-4">
+    </form>
+</div>
